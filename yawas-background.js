@@ -69,7 +69,6 @@ function subtree(res) {
 
 async function getYawasBookmarks() {
   return new Promise((resolve,reject) => {
-    console.log(yawasBookmarkId)
     chrome.bookmarks.getSubTree(yawasBookmarkId, res => {
       resolve(subtree(res[0]))
     })
@@ -224,7 +223,7 @@ async function importAllBookmarks(callback)
     }
     chrome.runtime.sendMessage({ msg: "importMessage", start: start, n: n });
     let str = await res.text();
-    let xml = (new window.DOMParser()).parseFromString(str, "text/xml");
+    let xml = (new DOMParser()).parseFromString(str, "text/xml");
     let items = xml.querySelectorAll('item');
     for (let i of items) {
       let title = i.querySelector('title').textContent;

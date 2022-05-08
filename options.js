@@ -56,7 +56,7 @@ chrome.runtime.sendMessage({ msg: "startImportFunc" })
 
 let searchButton = document.getElementById('searchChromeBookmarks');
 searchButton.addEventListener('click', () => {
-  chrome.tabs.create({url:chrome.extension.getURL('localsearch.html')})
+  chrome.tabs.create({url:chrome.runtime.getURL('localsearch.html')})
   window.close()
 });
 
