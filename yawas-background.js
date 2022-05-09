@@ -8,8 +8,8 @@ var leftMark = '<<';//'&ldquo;'
 var rightMark = '>>';//'&rdquo;'
 var lenQuote = rightMark.length;
 var handlePDF = false;
-var saveLocally = false;
-var saveChromeBookmarks = true;
+var saveLocally = true;
+var saveChromeBookmarks = false;
 var googleSignature = null;
 
 var yawasBookmarkId = null;
@@ -211,57 +211,60 @@ async function importAllBookmarks(callback)
   let importedUrls = new Set()
 
   // Laurent: note that output=xml returns ALL bookmarks along with tags <label></label>
-  while (loop)// && n <= max)
-  {
-    console.log('start=',start);
-    let urlBookmarks = 'https://www.google.com/bookmarks/lookup?output=rss&start=' + start;
-    let res = null
-    try {
-      res = await fetch(urlBookmarks);
-    } catch (fetcherror) {
-      return callback(n,'error retrieving online google bookmarks')
-    }
-    chrome.runtime.sendMessage({ msg: "importMessage", start: start, n: n });
-    let str = await res.text();
-    let xml = (new DOMParser()).parseFromString(str, "text/xml");
-    let items = xml.querySelectorAll('item');
-    for (let i of items) {
-      let title = i.querySelector('title').textContent;
-      let url = i.querySelector('link').textContent;
-      let date = i.querySelector('pubDate')? new Date(i.querySelector('pubDate').textContent) : null;
-      if (url.indexOf('file:///') === 0) {
-        console.error('not importing file bookmark',url)
-      } else if (!(url > '')) {
-        console.error('url undefined',url)
-      }
-      else {
-        importedUrls.add(url);
-        //let labels = [...i.querySelectorAll('bkmk_label')].map(a => a.textContent).join(",");
-        //console.log(labels)
-        let annotations = i.querySelector('bkmk_annotation')?i.querySelector('bkmk_annotation').textContent.trim():'';
-        n++;
-        let newTitle = title;
-        if (annotations > '')
-          newTitle += '#__#' + annotations;
-        if (existingUrls[url]) {
-          await remove(existingUrls[url].id);
-        }
-        await createBookmark({title:newTitle, url:url},date)
-      }
-    }
-    start += items.length;
-    if (items.length === 0)
-      loop = false;
-  }
+  // while (loop)// && n <= max)
+  // {
+  //   console.log('start=',start);
+  //   let urlBookmarks = 'https://www.google.com/bookmarks/lookup?output=rss&start=' + start;
+  //   let res = null
+  //   try {
+  //     res = await fetch(urlBookmarks);
+  //   } catch (fetcherror) {
+  //     return callback(n,'error retrieving online google bookmarks')
+  //   }
+  //   chrome.runtime.sendMessage({ msg: "importMessage", start: start, n: n });
+  //   let str = await res.text();
+  //   let xml = (new  window.DOMParser()).parseFromString(str, "text/xml");
+  //   let items = xml.querySelectorAll('item');
+  //   for (let i of items) {
+  //     let title = i.querySelector('title').textContent;
+  //     let url = i.querySelector('link').textContent;
+  //     let date = i.querySelector('pubDate')? new Date(i.querySelector('pubDate').textContent) : null;
+  //     if (url.indexOf('file:///') === 0) {
+  //       console.error('not importing file bookmark',url)
+  //     } else if (!(url > '')) {
+  //       console.error('url undefined',url)
+  //     }
+  //     else {
+  //       importedUrls.add(url);
+  //       //let labels = [...i.querySelectorAll('bkmk_label')].map(a => a.textContent).join(",");
+  //       //console.log(labels)
+  //       let annotations = i.querySelector('bkmk_annotation')?i.querySelector('bkmk_annotation').textContent.trim():'';
+  //       n++;
+  //       let newTitle = title;
+  //       if (annotations > '')
+  //         newTitle += '#__#' + annotations;
+  //       if (existingUrls[url]) {
+  //         await remove(existingUrls[url].id);
+  //       }
+  //       await createBookmark({title:newTitle, url:url},date)
+  //     }
+  //   }
+  //   start += items.length;
+  //   if (items.length === 0)
+  //     loop = false;
+  // }
   // recreate the ones not imported from Google Bookmarks
   for (let item of existing) {
+    start += existing.length;
+    if (items.length === 0)
+    loop = false;
     if (!importedUrls.has(item.url))
     {
       console.log('creating from existing',item.url)
       await createBookmark({title:item.title,url:item.url},new Date(item.dateAdded))
     }
   }
-
+  // loop = false;
   callback(n);
 }
 
@@ -328,8 +331,8 @@ function yawas_getAnnotations_chrome_storage(webUrl,cb) {
 
 async function yawas_getAnnotations(webUrl,cb)
 {
-    //if (saveLocally)
-    //  return yawas_getAnnotations_chrome_storage(webUrl)
+    if (saveLocally)
+      return yawas_getAnnotations_chrome_storage(webUrl)
     if (saveChromeBookmarks)
       return await yawas_getAnnotations_chrome_bookmarks(webUrl,cb);
 
