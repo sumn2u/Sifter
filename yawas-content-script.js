@@ -309,7 +309,7 @@ function addHighlightsWrapper()
     highlightswrapper.style.zIndex = 200000;
     highlightswrapper.style.margin = '0px';
     highlightswrapper.style.userSelect = 'none';
-    highlightswrapper.style.fontFamily = '"avenir next",Helvetica';
+    highlightswrapper.style.fontFamily = '"Brandon Text", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"';
     highlightswrapper.style.right = '8px';
     highlightswrapper.style.bottom = '8px';
     highlightswrapper.style.borderRadius = '8px';
@@ -333,7 +333,7 @@ function addHighlightsWrapper()
     dragheader.style.cursor = 'move';
     dragheader.style.fontSize = '16px';
     dragheader.style.color = '#8a8';//'#ccc';
-    dragheader.textContent = 'Yawas';
+    dragheader.textContent = 'Sifter';
     highlightswrapper.appendChild(dragheader);
     var highlightcaption = document.createElement('div');
     highlightcaption.addEventListener('mousedown',(evt) => yawas_next_highlight(evt));
@@ -374,7 +374,7 @@ function addHighlightsWrapper()
     close.style.position = 'absolute';
     close.style.top = 0;
     close.style.left = 0;
-    close.style.margin = '4px';
+    close.style.margin = '7px';
     close.style.fontSize = '12px'
     close.style.padding = '4px';
     close.style.color = '#ccc';

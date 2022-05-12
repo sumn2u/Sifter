@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-<title>Yawas Search</title>
+<title>Sifter Search</title>
 <style>
 :root{
 --titlefont:'avenir next',avenir,Lato,'GillSans',-apple-system,Helvetica,Arial,sans-serif;
@@ -16,6 +16,130 @@
 
 *{
   font-family: var(--font);
+  -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+@font-face {
+  font-family: 'Brandon Text';
+  src: url('../fonts/BrandonText-Bold.eot');
+  src: url('../fonts/BrandonText-Bold.eot?#iefix') format('embedded-opentype'), url('../fonts/BrandonText-Bold.woff2') format('woff2'), url('../fonts/BrandonText-Bold.woff') format('woff'), url('../fonts/BrandonText-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Brandon Text';
+  src: url('../fonts/BrandonText-Thin.eot');
+  src: url('../fonts/BrandonText-Thin.eot?#iefix') format('embedded-opentype'), url('../fonts/BrandonText-Thin.woff2') format('woff2'), url('../fonts/BrandonText-Thin.woff') format('woff'), url('../fonts/BrandonText-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Brandon Text';
+  src: url('../fonts/BrandonText-LightItalic.eot');
+  src: url('../fonts/BrandonText-LightItalic.eot?#iefix') format('embedded-opentype'), url('../fonts/BrandonText-LightItalic.woff2') format('woff2'), url('../fonts/BrandonText-LightItalic.woff') format('woff'), url('../fonts/BrandonText-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Brandon Text';
+  src: url('../fonts/BrandonText-Medium.eot');
+  src: url('../fonts/BrandonText-Medium.eot?#iefix') format('embedded-opentype'), url('../fonts/BrandonText-Medium.woff2') format('woff2'), url('../fonts/BrandonText-Medium.woff') format('woff'), url('../fonts/BrandonText-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Brandon Text';
+  src: url('../fonts/BrandonText-ThinItalic.eot');
+  src: url('../fonts/BrandonText-ThinItalic.eot?#iefix') format('embedded-opentype'), url('../fonts/BrandonText-ThinItalic.woff2') format('woff2'), url('../fonts/BrandonText-ThinItalic.woff') format('woff'), url('../fonts/BrandonText-ThinItalic.ttf') format('truetype');
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Brandon Text';
+  src: url('../fonts/BrandonText-RegularItalic.eot');
+  src: url('../fonts/BrandonText-RegularItalic.eot?#iefix') format('embedded-opentype'), url('../fonts/BrandonText-RegularItalic.woff2') format('woff2'), url('../fonts/BrandonText-RegularItalic.woff') format('woff'), url('../fonts/BrandonText-RegularItalic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Brandon Text';
+  src: url('../fonts/BrandonText-Black.eot');
+  src: url('../fonts/BrandonText-Black.eot?#iefix') format('embedded-opentype'), url('../fonts/BrandonText-Black.woff2') format('woff2'), url('../fonts/BrandonText-Black.woff') format('woff'), url('../fonts/BrandonText-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Brandon Text';
+  src: url('../fonts/BrandonText-BoldItalic.eot');
+  src: url('../fonts/BrandonText-BoldItalic.eot?#iefix') format('embedded-opentype'), url('../fonts/BrandonText-BoldItalic.woff2') format('woff2'), url('../fonts/BrandonText-BoldItalic.woff') format('woff'), url('../fonts/BrandonText-BoldItalic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Brandon Text';
+  src: url('../fonts/BrandonText-Regular.eot');
+  src: url('../fonts/BrandonText-Regular.eot?#iefix') format('embedded-opentype'), url('../fonts/BrandonText-Regular.woff2') format('woff2'), url('../fonts/BrandonText-Regular.woff') format('woff'), url('../fonts/BrandonText-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Brandon Text';
+  src: url('../fonts/BrandonText-Light.eot');
+  src: url('../fonts/BrandonText-Light.eot?#iefix') format('embedded-opentype'), url('../fonts/BrandonText-Light.woff2') format('woff2'), url('../fonts/BrandonText-Light.woff') format('woff'), url('../fonts/BrandonText-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Brandon Text';
+  src: url('../fonts/BrandonText-MediumItalic.eot');
+  src: url('../fonts/BrandonText-MediumItalic.eot?#iefix') format('embedded-opentype'), url('../fonts/BrandonText-MediumItalic.woff2') format('woff2'), url('../fonts/BrandonText-MediumItalic.woff') format('woff'), url('../fonts/BrandonText-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Brandon Text';
+  src: url('../fonts/BrandonText-BlackItalic.eot');
+  src: url('../fonts/BrandonText-BlackItalic.eot?#iefix') format('embedded-opentype'), url('../fonts/BrandonText-BlackItalic.woff2') format('woff2'), url('../fonts/BrandonText-BlackItalic.woff') format('woff'), url('../fonts/BrandonText-BlackItalic.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+:root{
+--titlefont:'avenir next',avenir,Lato,'GillSans',-apple-system,Helvetica,Arial,sans-serif;
+--font:'avenir next',avenir,-apple-system,Helvetica,Arial,sans-serif;
+--text:white;
+--bg:#190B33;
+--bg-blue:#3F75F0/*#9D6CFF*/;
+--bg-green:#9EDD09;
+--bg-red:#920028;
+--body-font-size:13pt;
+}
+
+
+*{
+  font-family: "Brandon Text", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   -webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
@@ -82,13 +206,22 @@ input,textarea{outline:none;font-size:16px;border:0;padding:8px;margin-bottom:16
   font-weight: bold;
 }
 #form{margin:16px 0}
-#searchbutton{font-weight: 500;text-transform: uppercase;}
+#searchbutton{
+  background-color: #41afa5;
+  cursor:pointer;
+  color: #fff;
+  min-width: 5rem;
+  font-weight: 500;
+}
+#searchbutton:hover{
+  background-color: #54c0b6;
+}
 </style>
 </head>
 <body>
-<div class='title'>Yawas Search</div>
+<div class='title'>Sifter Search</div>
 <form id='form'>
-<input autofocus autocorrect='off' autocapitalize='off' spellcheck='false' size=60 placeholder='search titles and annotations' type='text' id='query'><input id='searchbutton' value='find' type='submit'>
+<input autofocus autocorrect='off' autocapitalize='off' spellcheck='false' size=60 placeholder='Search titles and annotations' type='text' id='query'><input id='searchbutton' value='Search' type='submit'>
 </form>
 <div id='results'>loading...</div>
 <script src='localsearch.js'></script>

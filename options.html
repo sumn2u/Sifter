@@ -3,6 +3,114 @@
 <head>
 <title>Yawas options</title>
 <style>
+
+@font-face {
+  font-family: 'Brandon Text';
+  src: url('../fonts/BrandonText-Bold.eot');
+  src: url('../fonts/BrandonText-Bold.eot?#iefix') format('embedded-opentype'), url('../fonts/BrandonText-Bold.woff2') format('woff2'), url('../fonts/BrandonText-Bold.woff') format('woff'), url('../fonts/BrandonText-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Brandon Text';
+  src: url('../fonts/BrandonText-Thin.eot');
+  src: url('../fonts/BrandonText-Thin.eot?#iefix') format('embedded-opentype'), url('../fonts/BrandonText-Thin.woff2') format('woff2'), url('../fonts/BrandonText-Thin.woff') format('woff'), url('../fonts/BrandonText-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Brandon Text';
+  src: url('../fonts/BrandonText-LightItalic.eot');
+  src: url('../fonts/BrandonText-LightItalic.eot?#iefix') format('embedded-opentype'), url('../fonts/BrandonText-LightItalic.woff2') format('woff2'), url('../fonts/BrandonText-LightItalic.woff') format('woff'), url('../fonts/BrandonText-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Brandon Text';
+  src: url('../fonts/BrandonText-Medium.eot');
+  src: url('../fonts/BrandonText-Medium.eot?#iefix') format('embedded-opentype'), url('../fonts/BrandonText-Medium.woff2') format('woff2'), url('../fonts/BrandonText-Medium.woff') format('woff'), url('../fonts/BrandonText-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Brandon Text';
+  src: url('../fonts/BrandonText-ThinItalic.eot');
+  src: url('../fonts/BrandonText-ThinItalic.eot?#iefix') format('embedded-opentype'), url('../fonts/BrandonText-ThinItalic.woff2') format('woff2'), url('../fonts/BrandonText-ThinItalic.woff') format('woff'), url('../fonts/BrandonText-ThinItalic.ttf') format('truetype');
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Brandon Text';
+  src: url('../fonts/BrandonText-RegularItalic.eot');
+  src: url('../fonts/BrandonText-RegularItalic.eot?#iefix') format('embedded-opentype'), url('../fonts/BrandonText-RegularItalic.woff2') format('woff2'), url('../fonts/BrandonText-RegularItalic.woff') format('woff'), url('../fonts/BrandonText-RegularItalic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Brandon Text';
+  src: url('../fonts/BrandonText-Black.eot');
+  src: url('../fonts/BrandonText-Black.eot?#iefix') format('embedded-opentype'), url('../fonts/BrandonText-Black.woff2') format('woff2'), url('../fonts/BrandonText-Black.woff') format('woff'), url('../fonts/BrandonText-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Brandon Text';
+  src: url('../fonts/BrandonText-BoldItalic.eot');
+  src: url('../fonts/BrandonText-BoldItalic.eot?#iefix') format('embedded-opentype'), url('../fonts/BrandonText-BoldItalic.woff2') format('woff2'), url('../fonts/BrandonText-BoldItalic.woff') format('woff'), url('../fonts/BrandonText-BoldItalic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Brandon Text';
+  src: url('../fonts/BrandonText-Regular.eot');
+  src: url('../fonts/BrandonText-Regular.eot?#iefix') format('embedded-opentype'), url('../fonts/BrandonText-Regular.woff2') format('woff2'), url('../fonts/BrandonText-Regular.woff') format('woff'), url('../fonts/BrandonText-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Brandon Text';
+  src: url('../fonts/BrandonText-Light.eot');
+  src: url('../fonts/BrandonText-Light.eot?#iefix') format('embedded-opentype'), url('../fonts/BrandonText-Light.woff2') format('woff2'), url('../fonts/BrandonText-Light.woff') format('woff'), url('../fonts/BrandonText-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Brandon Text';
+  src: url('../fonts/BrandonText-MediumItalic.eot');
+  src: url('../fonts/BrandonText-MediumItalic.eot?#iefix') format('embedded-opentype'), url('../fonts/BrandonText-MediumItalic.woff2') format('woff2'), url('../fonts/BrandonText-MediumItalic.woff') format('woff'), url('../fonts/BrandonText-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Brandon Text';
+  src: url('../fonts/BrandonText-BlackItalic.eot');
+  src: url('../fonts/BrandonText-BlackItalic.eot?#iefix') format('embedded-opentype'), url('../fonts/BrandonText-BlackItalic.woff2') format('woff2'), url('../fonts/BrandonText-BlackItalic.woff') format('woff'), url('../fonts/BrandonText-BlackItalic.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
 :root{
 --titlefont:'avenir next',avenir,Lato,'GillSans',-apple-system,Helvetica,Arial,sans-serif;
 --font:'avenir next',avenir,-apple-system,Helvetica,Arial,sans-serif;
@@ -15,65 +123,84 @@
 }
 
 *{
-  font-family: var(--font);
+  font-family: "Brandon Text", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   -webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
-html{width:420px;}
-body {
-  margin:16px;
-  overflow-x:hidden;
-  font-size:var(--body-font-size);
-	background-color:var(--bg);color:var(--text);
-}
-h1{font-size:160%}
-button{
-  margin:8px;
-  border:0;
-  outline:none;
-  font-size:14px;
-  padding:8px 16px;
-  font-weight:bold;
-  background-color:#8a8;
-  border-radius:32px;
-  cursor:pointer;
-}
-button:hover{color:white}
-a{color:white}
 
-.adonate{
-font-size:14px;
-font-weight:bold;
-color:black;
-background-color:rgb(255, 196, 57);
-border-radius:32px;
-padding:8px 16px;
+html{width:20rem;}
+body {
+  color: #ffffff;
+  text-align: center;
+	background: linear-gradient(143.37deg, #FBB22C 0%, #F9886C 33.09%, #E55E5E 66.68%, #ED64C4 100%);
 }
-#importChromeBookmarks {
-  display: none;
+.container {
+  text-align: initial;
+  margin-left: 1.4rem;
+  font-size: 0.9rem;
 }
-.adonate:hover{color:white;}
+
+h3{
+  margin: 0;
+  font-size: 1.3rem;
+}
+.offer-seprator {
+    background: #ffffff;
+    display: block;
+    height: 1px;
+    margin: 6px;
+    opacity: 0.25;
+    width: 94%;
+}
+.search-bookmarks {
+  padding-top: 0.5rem;
+}
+button{
+  border: 0;
+  border-radius: 0.3rem;
+  font-size: 1em;
+  min-height: 2rem;
+  background-color: #41afa5;
+  cursor:pointer;
+  color: #fff;
+  min-width: 8rem;
+}
+button:hover{
+  background-color: #54c0b6;
+}
+button:focus {
+  box-shadow: 0 0 0 3px #fff, 0 0 0 5px #41afa5;
+}
+a{color:white}
+.features{
+  text-align: initial;
+  margin-left: -16px;
+  margin-top: 3px;
+}
+.title {
+  font-weight: 600;
+  font-size: 1rem;
+}
+ul li::marker {
+  content: '\2713  ';
+  color: #41afa5;
+}
 </style>
 </head>
 <body>
-	<h1>Yawas settings</h1>
-	<!--input type="checkbox" id="handlePDF"/> Use Yawas to view PDF documents
-	<br-->
-	<!--input type="checkbox" id="saveGoogle"/>Save highlights to Google Bookmarks<br/-->
-  <!--h3>Saving options</h3>
-  <input type="radio" name="saveoption" id="saveChromeBookmarks"/> chrome.bookmark API (unlimited)<br>
-	<input type="radio" name="saveoption" id="saveLocally"/> chrome.storage.sync (max 512 entries)<br-->
-	<!--button id="save">Save and close</button-->
-	<!--button id="restore" title="Restore default options">Restore</button-->
-	<!--br><br-->
-  <h3>Search</h3>
-  Search your yawas highlights <button id="searchChromeBookmarks" title="Search your yawas highlights">Search</button>
-  <!-- <h3>Import</h3>
-  Import your Google Bookmarks (you need to be signed in) into Chrome Bookmarks.
-  This will create a 'Yawas' folder at the root of your Chrome Bookmarks.<br> -->
-  <!-- input type="button" id="importChromeBookmarks" value="Import" -->
-  <button id="importChromeBookmarks" title="Import Google Bookmarks to Chrome Bookmarks" >Import</button>
-  <p id="importmessage"></p>
+	<h3>Sifter</h3>
+  <span class="offer-seprator"></span>
+  <div class="container">
+    <span class="title">Through this extension one can</span>
+    <ul class="features">
+      <li>Highlight and comment on webpages in different colors</li>
+      <li>Automatically recreates the highlights when a web page is reopened</li>
+      <li>Search/ Edit bookmarks through kewwords</li>
+  </ul>
+  <div class="search-bookmarks">
+    <button id="searchChromeBookmarks" title="Search your yawas highlights">Search highlights</button>
+  </div>
+</div>
 	<br>
 </body>
 <script src="options.js"></script>

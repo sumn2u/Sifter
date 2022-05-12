@@ -1,9 +1,9 @@
 {
-  "name": "Yawas",
-  "author": "Laurent Denoue",
+  "name": "Sifter",
+  "author": "Suman Kunwar",
   "manifest_version": 3,
-  "version": "7.4.0",
-  "description": "Highlight Web pages; stored in your browser bookmarks, searchable, and recreated automatically when you revisit a page",
+  "version": "1.0.0",
+  "description": "Highlight paragraphs on web pages with different colors and store them for future use; search or revisit pages to retrieve the highlighted text.",
   "background": {"service_worker": "yawas-background.js"},
   "content_scripts": [
     {
@@ -19,12 +19,12 @@
   }],
   "permissions": ["activeTab","storage","contextMenus","tabs","bookmarks"],
   "action": {
-		"default_title": "Yawas",
-  	"default_icon": "yawas_on_128.png",
+		"default_title": "Sifter",
+  	"default_icon": "shifter_on_128.png",
     "default_popup": "options.html"
 	},
 	"icons": {
-   "128": "yawas_on_128.png"
+   "128": "shifter_on_128.png"
   },
   "commands": {
     "yawas-yellow": {

@@ -8,7 +8,7 @@ chrome.bookmarks.search({}, res => {
     }
   }
   all.sort((a,b) => b.dateAdded - a.dateAdded)
-  results.innerHTML = '<p>search your yawas bookmarks by title, url, highlights and notes (' + all.length + ' urls)</p>'
+  results.innerHTML = '<p>Search your sifter bookmarks by title, url, highlights and notes (' + all.length + ' urls)</p>'
 })
 
 const leftMark = '<<';//'&ldquo;'

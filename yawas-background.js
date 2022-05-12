@@ -1057,67 +1057,68 @@ chrome.contextMenus.onClicked.addListener((info,tab) => {
 
 chrome.contextMenus.create({
   "id" : "yellow",
-  "title" : "Yellow",// (Ctrl-Shift-Y)",
-  "type" : "normal",
-  "contexts" : ["selection"],
-});
-chrome.contextMenus.create({
-  "id" : "red",
-  "title" : "Red",// (Ctrl-Shift-R)",
-  "type" : "normal",
-  "contexts" : ["selection"],
-});
-chrome.contextMenus.create({
-  "id" : "blue",
-  "title" : "Blue",// (Ctrl-Shift-B)",
+  "title" : "Yellow 🟨",// (Ctrl-Shift-Y)",
   "type" : "normal",
   "contexts" : ["selection"],
 });
 chrome.contextMenus.create({
   "id" : "green",
-  "title" : "Green",// (Ctrl-Shift-G)",
+  "title" : "Green 🟩",// (Ctrl-Shift-G)",
+  "type" : "normal",
+  "contexts" : ["selection"],
+});
+chrome.contextMenus.create({
+  "id" : "red",
+  "title" : "Red 🟥",// (Ctrl-Shift-R)",
+  "type" : "normal",
+  "contexts" : ["selection"],
+});
+
+chrome.contextMenus.create({
+  "id" : "blue",
+  "title" : "Blue 🟦",// (Ctrl-Shift-B)",
   "type" : "normal",
   "contexts" : ["selection"],
 });
 
 chrome.contextMenus.create({
   "id" : "note",
-  "title" : "Comment",// (Ctrl-Shift-C)",
+  "title" : "Comment ✍️",// (Ctrl-Shift-C)",
   "type" : "normal",
   "contexts" : ["selection"],
 });
 
 chrome.contextMenus.create({
   "id" : "delete",
-  "title" : "Delete",// (Ctrl-Shift-D)",
+  "title" : "Delete ❌",// (Ctrl-Shift-D)",
   "type" : "normal",
   "contexts" : ["selection"],
 });
 
 chrome.contextMenus.create({
   "id" : "copyclipboard",
-  "title" : "Copy",
+  "title" : "Copy 📋",
   "type" : "normal",
   "contexts" : ["page"],
 });
 
 chrome.contextMenus.create({
   "id" : "email",
-  "title" : "Email",
+  "title" : "Email 📧",
   "type" : "normal",
   "contexts" : ["page"],
 });
 
 chrome.contextMenus.create({
   "id" : "search",
-  "title" : "Search",
+  "title" : "Search 🔍",
   "type" : "normal",
   "contexts" : ["page"],
 });
 
 chrome.contextMenus.create({
   "id" : "edit",
-  "title" : "Edit",
+  "title" : "Edit ✏️",
   "type" : "normal",
   "contexts" : ["page"],
 });
