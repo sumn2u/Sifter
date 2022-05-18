@@ -192,15 +192,38 @@ ul li::marker {
 .logo {
   vertical-align: middle;
   height: 36px;
-  padding: 0px 12px 6px 0px;
+  padding: 0px 0px 6px 0px;
 
 }
 .brand {
-  padding: 10px 0px 0px 6px;
+  padding: 10px 0px 0px 0px;
   display: inline-block;
 }
 .slogan {
   color: #41afa5;
+}
+.yellow, .red, .green, .blue {
+  text-decoration: underline;
+}
+.red {
+  -webkit-text-decoration-color: red; /* Safari */  
+  text-decoration-color: red;
+  color: red;
+}
+.yellow {
+  -webkit-text-decoration-color: yellow; /* Safari */  
+  text-decoration-color: yellow;
+  color: yellow;
+}
+.green {
+  -webkit-text-decoration-color: green; /* Safari */  
+  text-decoration-color: green;
+  color: green;
+}
+.blue {
+  -webkit-text-decoration-color: blue; /* Safari */  
+  text-decoration-color: blue;
+  color: blue;
 }
 </style>
 </head>
@@ -215,9 +238,10 @@ ul li::marker {
   <div class="container">
     <span class="title">Highlight and save paragraphs in bookmarks <br/>with different colors</span>
     <ul class="features">
-      <li>Use <b class="key">Alt</b><b>+Shift+Y</b> to highlight paragraphs in <b>yellow</b></li>
-      <li>Use <b class="key">Alt</b><b>+Shift+R</b> to highlight paragraphs in <b>red</b></li>
-      <li>Use <b class="key">Alt</b><b>+Shift+B</b> to highlight paragraph in <b>blue</b></li>
+      <li>Use <b class="key">Alt</b><b>+Shift+Y</b> to highlight paragraphs in <b class="yellow">yellow</b></li>
+      <li>Use <b class="key">Alt</b><b>+Shift+R</b> to highlight paragraphs in <b class="red">red</b></li>
+      <li>Use <b class="key">Alt</b><b>+Shift+G</b> to highlight paragraphs in <b class="green">green</b></li>
+      <li>Use <b class="key">Alt</b><b>+Shift+B</b> to highlight paragraph in <b class="blue">blue</b></li>
   </ul>
   <span class="title">Search or edit existing paragraphs via 
   </span>

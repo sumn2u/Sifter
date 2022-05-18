@@ -648,7 +648,7 @@ function refreshBrowserAction(url) {
   if (urls[qurl] != undefined) {
     chrome.action.setBadgeText({ text: "" + urls[qurl] });
   } else chrome.action.setBadgeText({ text: "0" });
-  chrome.action.setTitle({ title: "Yawas" });
+  chrome.action.setTitle({ title: "Shifter" });
 }
 
 function copyTextToClipboard(text) {
@@ -1018,6 +1018,74 @@ function isPDF(href) {
                            "onclick" : getDonateHandler()
                          });*/
 
+chrome.contextMenus.create({
+  id: "yellow",
+  title: "Yellow 🟨", // (Ctrl-Shift-Y)",
+  type: "normal",
+  contexts: ["selection"],
+});
+chrome.contextMenus.create({
+  id: "green",
+  title: "Green 🟩", // (Ctrl-Shift-G)",
+  type: "normal",
+  contexts: ["selection"],
+});
+chrome.contextMenus.create({
+  id: "red",
+  title: "Red 🟥", // (Ctrl-Shift-R)",
+  type: "normal",
+  contexts: ["selection"],
+});
+
+chrome.contextMenus.create({
+  id: "blue",
+  title: "Blue 🟦", // (Ctrl-Shift-B)",
+  type: "normal",
+  contexts: ["selection"],
+});
+
+// chrome.contextMenus.create({
+//   id: "note",
+//   title: "Comment ✍️", // (Ctrl-Shift-C)",
+//   type: "normal",
+//   contexts: ["selection"],
+// });
+
+chrome.contextMenus.create({
+  id: "delete",
+  title: "Delete ❌", // (Ctrl-Shift-D)",
+  type: "normal",
+  contexts: ["selection"],
+});
+
+// chrome.contextMenus.create({
+//   id: "copyclipboard",
+//   title: "Copy 📋",
+//   type: "normal",
+//   contexts: ["page"],
+// });
+
+chrome.contextMenus.create({
+  id: "email",
+  title: "Email 📧",
+  type: "normal",
+  contexts: ["page"],
+});
+
+chrome.contextMenus.create({
+  id: "search",
+  title: "Search 🔍",
+  type: "normal",
+  contexts: ["page"],
+});
+
+chrome.contextMenus.create({
+  id: "edit",
+  title: "Edit ✏️",
+  type: "normal",
+  contexts: ["page"],
+});
+
 chrome.contextMenus.onClicked.addListener((info, tab) => {
   if (info.menuItemId === "delete")
     sendMessageActiveTab({ action: "yawas_delete_highlight" });
@@ -1046,74 +1114,6 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
       url: info.pageUrl,
     });
   }
-});
-
-chrome.contextMenus.create({
-  id: "yellow",
-  title: "Yellow 🟨", // (Ctrl-Shift-Y)",
-  type: "normal",
-  contexts: ["selection"],
-});
-chrome.contextMenus.create({
-  id: "green",
-  title: "Green 🟩", // (Ctrl-Shift-G)",
-  type: "normal",
-  contexts: ["selection"],
-});
-chrome.contextMenus.create({
-  id: "red",
-  title: "Red 🟥", // (Ctrl-Shift-R)",
-  type: "normal",
-  contexts: ["selection"],
-});
-
-chrome.contextMenus.create({
-  id: "blue",
-  title: "Blue 🟦", // (Ctrl-Shift-B)",
-  type: "normal",
-  contexts: ["selection"],
-});
-
-chrome.contextMenus.create({
-  id: "note",
-  title: "Comment ✍️", // (Ctrl-Shift-C)",
-  type: "normal",
-  contexts: ["selection"],
-});
-
-chrome.contextMenus.create({
-  id: "delete",
-  title: "Delete ❌", // (Ctrl-Shift-D)",
-  type: "normal",
-  contexts: ["selection"],
-});
-
-chrome.contextMenus.create({
-  id: "copyclipboard",
-  title: "Copy 📋",
-  type: "normal",
-  contexts: ["page"],
-});
-
-chrome.contextMenus.create({
-  id: "email",
-  title: "Email 📧",
-  type: "normal",
-  contexts: ["page"],
-});
-
-chrome.contextMenus.create({
-  id: "search",
-  title: "Search 🔍",
-  type: "normal",
-  contexts: ["page"],
-});
-
-chrome.contextMenus.create({
-  id: "edit",
-  title: "Edit ✏️",
-  type: "normal",
-  contexts: ["page"],
 });
 
 chrome.commands.onCommand.addListener(function (command) {
