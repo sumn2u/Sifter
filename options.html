@@ -128,11 +128,11 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
-html{width:20rem;}
+html{width:26rem;}
 body {
-  color: #ffffff;
   text-align: center;
-	background: linear-gradient(143.37deg, #FBB22C 0%, #F9886C 33.09%, #E55E5E 66.68%, #ED64C4 100%);
+	background-color: var(--bg);
+  color: var(--text);
 }
 .container {
   text-align: initial;
@@ -154,6 +154,7 @@ h3{
 }
 .search-bookmarks {
   padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 button{
   border: 0;
@@ -185,23 +186,50 @@ ul li::marker {
   content: '\2713  ';
   color: #41afa5;
 }
+.container {
+  white-space:nowrap;
+}
+.logo {
+  vertical-align: middle;
+  height: 36px;
+  padding: 0px 12px 6px 0px;
+
+}
+.brand {
+  padding: 10px 0px 0px 6px;
+  display: inline-block;
+}
+.slogan {
+  color: #41afa5;
+}
 </style>
 </head>
 <body>
-	<h3>Sifter</h3>
+ <div class="container">
+<h3>
+  <img src="shifter_on_128.png"  class="logo" style="vertical-align:middle">
+  <span class="brand">Sifter <span class="slogan">for webpages</span></span>
+</h3>
+</div>
   <span class="offer-seprator"></span>
   <div class="container">
-    <span class="title">Through this extension one can</span>
+    <span class="title">Highlight and save paragraphs in bookmarks <br/>with different colors</span>
     <ul class="features">
-      <li>Highlight and comment on webpages in different colors</li>
-      <li>Automatically recreates the highlights when a web page is reopened</li>
-      <li>Search/ Edit bookmarks through kewwords</li>
+      <li>Use <b class="key">Alt</b><b>+Shift+Y</b> to highlight paragraphs in <b>yellow</b></li>
+      <li>Use <b class="key">Alt</b><b>+Shift+R</b> to highlight paragraphs in <b>red</b></li>
+      <li>Use <b class="key">Alt</b><b>+Shift+B</b> to highlight paragraph in <b>blue</b></li>
   </ul>
+  <span class="title">Search or edit existing paragraphs via 
+  </span>
   <div class="search-bookmarks">
     <button id="searchChromeBookmarks" title="Search your yawas highlights">Search highlights</button>
   </div>
+  <span class="title">Revisit URL to get the highlighted paragraphs<br/> and export it via email.</span>
 </div>
-	<br>
+
+<span class="offer-seprator"></span>
+	<br/>
+  <br/>
 </body>
 <script src="options.js"></script>
 </html>

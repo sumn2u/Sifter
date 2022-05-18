@@ -54,10 +54,15 @@ function restoreOptions() {
 // chrome.runtime.sendMessage({ msg: "startImportFunc" })
 // });
 
-let searchButton = document.getElementById('searchChromeBookmarks');
-searchButton.addEventListener('click', () => {
-  chrome.tabs.create({url:chrome.runtime.getURL('localsearch.html')})
-  window.close()
+let searchButton = document.getElementById("searchChromeBookmarks");
+searchButton.addEventListener("click", () => {
+  chrome.tabs.create({ url: chrome.runtime.getURL("localsearch.html") });
+  window.close();
+});
+const keyboardText =
+  navigator.platform.toUpperCase().indexOf("MAC") >= 0 ? "Alt" : "Ctrl";
+[...document.querySelectorAll(".key")].forEach(function (button) {
+  button.innerHTML = keyboardText;
 });
 
 // chrome.runtime.onMessage.addListener(async function requestCallback(request, sender, sendResponse) {
@@ -73,4 +78,3 @@ searchButton.addEventListener('click', () => {
 //     }
 //   }
 // });
-
