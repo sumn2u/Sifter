@@ -1,7 +1,6 @@
-# Shifter
+# Sifter
 
-
-Shifter is a browser extension that highlights web pages with different colors. These highlighted paragraphs are saved in a bookmark and can be queried by searching or revisiting the page. 
+Sifter is a browser extension that highlights web pages with different colors. These highlighted paragraphs are saved in a bookmark and can be queried by searching or revisiting the page. 
 
 
 ## Features
@@ -21,4 +20,3 @@ Shifter is a browser extension that highlights web pages with different colors. 
 MIT
 
 **Free Software, Hell Yeah!**
-
