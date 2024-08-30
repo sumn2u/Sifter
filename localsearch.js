@@ -116,12 +116,6 @@ function search(q) {
   }
 }
 
-/*document.getElementById('close').addEventListener('click',(evt) => {
-  evt.preventDefault()
-  evt.stopPropagation()
-  window.close();
-})*/
-
 document.getElementById('form').onsubmit = (evt) => {
   evt.preventDefault()
   evt.stopPropagation()

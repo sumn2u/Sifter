@@ -707,12 +707,6 @@ function highlightDoc(wnd,doc,highlights)
     return nremapped;
 }
 
-/*function whiteFont(element) {
-  let color = getComputedStyle(element).color
-  console.log(color)
-  return true
-}*/
-
 function highlightNowFirefox22(selectionrng,color,textcolor,doc, selectionstring,occurence,comment)
 {
     let baseNode = doc.createElement("yawas");//span was changing styling on some web pages

@@ -74,12 +74,6 @@ async function getYawasBookmarks() {
   });
 }
 
-/*
-chrome.bookmarks.search({}, async res => {
-    res.forEach((item, i) => {
-      chrome.bookmarks.remove(item.id)
-    });})
-*/
 
 async function create(obj) {
   return new Promise((resolve, reject) => {
@@ -172,22 +166,6 @@ async function deleteYawasFolder() {
   }
 }
 
-/*async function moveBookmarksIntoFolders() {
-  let res = await search({})
-  for (let item in res) {
-    if (item.parentId === yawasBookmarkId) {
-      let folder = getFolderName(item.url)
-      let res = await search({title:folder})
-      if (res.length === 1) {
-        chrome.bookmarks.move(item.id,{parentId:res.id})
-      } else {
-        await createBookmark({title:item.title,url:item.url})
-      }
-      chrome.bookmarks.remove(item.id)
-    }
-  }
-}*/
-
 async function importAllBookmarks(callback) {
   //let existing = await search({})
   let existing = await getYawasBookmarks();
@@ -204,49 +182,6 @@ async function importAllBookmarks(callback) {
   let max = 800;
   let importedUrls = new Set();
 
-  // Laurent: note that output=xml returns ALL bookmarks along with tags <label></label>
-  // while (loop)// && n <= max)
-  // {
-  //   console.log('start=',start);
-  //   let urlBookmarks = 'https://www.google.com/bookmarks/lookup?output=rss&start=' + start;
-  //   let res = null
-  //   try {
-  //     res = await fetch(urlBookmarks);
-  //   } catch (fetcherror) {
-  //     return callback(n,'error retrieving online google bookmarks')
-  //   }
-  //   chrome.runtime.sendMessage({ msg: "importMessage", start: start, n: n });
-  //   let str = await res.text();
-  //   let xml = (new  window.DOMParser()).parseFromString(str, "text/xml");
-  //   let items = xml.querySelectorAll('item');
-  //   for (let i of items) {
-  //     let title = i.querySelector('title').textContent;
-  //     let url = i.querySelector('link').textContent;
-  //     let date = i.querySelector('pubDate')? new Date(i.querySelector('pubDate').textContent) : null;
-  //     if (url.indexOf('file:///') === 0) {
-  //       console.error('not importing file bookmark',url)
-  //     } else if (!(url > '')) {
-  //       console.error('url undefined',url)
-  //     }
-  //     else {
-  //       importedUrls.add(url);
-  //       //let labels = [...i.querySelectorAll('bkmk_label')].map(a => a.textContent).join(",");
-  //       //console.log(labels)
-  //       let annotations = i.querySelector('bkmk_annotation')?i.querySelector('bkmk_annotation').textContent.trim():'';
-  //       n++;
-  //       let newTitle = title;
-  //       if (annotations > '')
-  //         newTitle += '#__#' + annotations;
-  //       if (existingUrls[url]) {
-  //         await remove(existingUrls[url].id);
-  //       }
-  //       await createBookmark({title:newTitle, url:url},date)
-  //     }
-  //   }
-  //   start += items.length;
-  //   if (items.length === 0)
-  //     loop = false;
-  // }
   // recreate the ones not imported from Google Bookmarks
   for (let item of existing) {
     start += existing.length;
@@ -688,24 +623,8 @@ function yawas_email(url, title) {
   var compose =
     "https://mail.google.com/mail/?extsrc=mailto&url=" +
     encodeURIComponent("mailto:?subject=" + title + "&body=" + body);
-  /*var width = Math.min(screen.width-40,640);
-    var height = Math.min(screen.height-40,480);
-    var left = Math.floor( (screen.width - width) / 2);
-    var top = Math.floor( (screen.height - height) / 2);
-    window.open(compose,'email_popup','left='+left+',top='+top+',height='+height+'px,width='+width+'px,resizable=1');*/
-  chrome.tabs.create({ url: compose });
+    chrome.tabs.create({ url: compose });
 }
-
-// deprecated in Chrome and does not work in Firefox
-/*chrome.tabs.onSelectionChanged.addListener(function(tabId, selectInfo) {
-  chrome.tabs.query({active:true,currentWindow: true}, function(tabs) {
-    if (tabs && tabs.length > 0 && tabs[0].url)
-    {
-      var tab = tabs[0];
-      refreshBrowserAction(tab.url);
-    }
-  });
-});*/
 
 chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
   if (tab && tab.url) refreshBrowserAction(tab.url);
@@ -792,7 +711,6 @@ async function startImport() {
 function requestCallback(request, sender, sendResponse) {
   var tabURL = purifyURL(request.url);
   var tabTitle = request.title;
-  //console.log('requestCallback',request);
   if (request.msg == "startImportFunc") startImport();
   if (request.fn === "yawas_getAnnotations") {
     yawas_getAnnotations(request.url, function (res) {
@@ -800,11 +718,6 @@ function requestCallback(request, sender, sendResponse) {
       sendResponse(res);
     });
   } else if (request.fn === "yawas_toolbar_signed_in") {
-    /*else if (request.fn === 'yawas_donate')
-  {
-    chrome.tabs.create({ url: donate_url });
-    sendResponse({});
-  }*/
     signedin = true;
     sendResponse({});
   } else if (request.fn === "addhighlight") {
@@ -1010,14 +923,6 @@ function isPDF(href) {
   else return href;
 }
 
-/*chrome.contextMenus.create({
-                           "id" : "donate",
-                           "title" : "Donate💰",
-                           "type" : "normal",
-                           "contexts" : ["selection","page"],
-                           "onclick" : getDonateHandler()
-                         });*/
-
 chrome.contextMenus.create({
   id: "yellow",
   title: "Yellow 🟨", // (Ctrl-Shift-Y)",
@@ -1044,27 +949,12 @@ chrome.contextMenus.create({
   contexts: ["selection"],
 });
 
-// chrome.contextMenus.create({
-//   id: "note",
-//   title: "Comment ✍️", // (Ctrl-Shift-C)",
-//   type: "normal",
-//   contexts: ["selection"],
-// });
-
 chrome.contextMenus.create({
   id: "delete",
   title: "Delete ❌", // (Ctrl-Shift-D)",
   type: "normal",
   contexts: ["selection"],
 });
-
-// chrome.contextMenus.create({
-//   id: "copyclipboard",
-//   title: "Copy 📋",
-//   type: "normal",
-//   contexts: ["page"],
-// });
-
 chrome.contextMenus.create({
   id: "email",
   title: "Email 📧",
