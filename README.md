@@ -13,10 +13,9 @@ Sifter is a browser extension that highlights web pages with different colors. T
 > This extension is written ontop of [YAWAS](https://chrome.google.com/webstore/detail/yawas/kjlghdmljfgngjdpeaiogebkiilpiimk?hl=en) extension.
 
 ## Usage
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/x0p5reU-ogY/0.jpg)](https://www.youtube.com/watch?v=x0p5reU-ogY)
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/u7CMUA8g96Y/0.jpg)](https://www.youtube.com/watch?v=u7CMUA8g96Y)
 
 ## License
 
 MIT
 
-**Free Software, Hell Yeah!**
